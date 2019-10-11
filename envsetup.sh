@@ -25,15 +25,15 @@ if [ -f "/etc/gentoo-release" ]; then
 
     preferred_py3_versions=($(get_installed_pythons "${@}" --py3))
     preferred_py3_version=$preferred_py3_versions[1]
-    echo "[DEBUG: using $preferred_py3_version for python3"
+    echo "[DEBUG] using $preferred_py3_version for python3"
 
     if [ ! -d "/usr/lib/python-exec/$preferred_py3_version" ]; then
-        echo "$preferred_py3_version not found, this may have unexpected results"
+        echo "[DEBUG] $preferred_py3_version not found, this may have unexpected results"
         return 1
     fi
 
     if [ ! -d "/usr/lib/python-exec/python2.7" ]; then
-        echo "python2.7 not found, this may have unexpected results"
+        echo "[DEBUG] python2.7 not found, this may have unexpected results"
         return 1
     fi
 
