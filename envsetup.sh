@@ -29,7 +29,7 @@ if [ -f "/etc/gentoo-release" ]; then
 
     if [ ! -d "/usr/lib/python-exec/$preferred_py3_version" ]; then
         echo "$preferred_py3_version not found, this may have unexpected results"
-        return 0
+        return 1
     fi
 
     if [ ! -d "/usr/lib/python-exec/python2.7" ]; then
