@@ -24,7 +24,8 @@ if [ -f "/etc/gentoo-release" ]; then
     unset JAVAC
 
     preferred_py3_versions=($(get_installed_pythons "${@}" --py3))
-    preferred_py3_version=$preferred_py3_versions[1]
+    preferred_py3_version=${preferred_py3_versions[@]:0:1}
+
     echo "[DEBUG] using $preferred_py3_version for python3"
 
     if [ ! -d "/usr/lib/python-exec/$preferred_py3_version" ]; then
