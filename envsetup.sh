@@ -20,9 +20,9 @@ export BUILD_HOSTNAME=grapheneos
 # Fix building on Gentoo
 if [ -f "/etc/gentoo-release" ]; then
     source script/python-eselect.in
-    echo "[DEBUG] Applying Gentoo fixes/workarounds"
-    unset JAVAC
-
+    echo "[DEBUG] Applying Gentoo fixes"
+    unset JAVAC # to use proper JDK
+    export EPYTHON=python2.7 # so /usr/bin/python returns python2.7
     preferred_py3_versions=($(get_installed_pythons "${@}" --py3))
     preferred_py3_version=${preferred_py3_versions[@]:0:1}
 
