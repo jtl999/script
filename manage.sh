@@ -14,9 +14,9 @@ elif [[ $# -ne 0 ]]; then
 fi
 
 branch=10
-aosp_version=QQ2A.200305.002 # version to use for build id and tag
-aosp_version_real=QQ2A.200305.002 # real base version
-aosp_tag=android-10.0.0_r30
+aosp_version=QQ2A.200405.005 # version to use for build id and tag
+aosp_version_real=QQ2A.200405.005 # real base version
+aosp_tag=android-10.0.0_r33
 
 aosp_forks=(
     device_common
@@ -44,7 +44,7 @@ aosp_forks=(
     platform_frameworks_native
     platform_frameworks_opt_net_wifi
     platform_libcore
-    platform_manifest
+    #platform_manifest
     platform_packages_apps_Bluetooth
     platform_packages_apps_Camera2
     platform_packages_apps_Contacts
